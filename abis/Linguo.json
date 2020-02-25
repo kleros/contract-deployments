@@ -1,0 +1,777 @@
+[
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      }
+    ],
+    "name": "acceptTranslation",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      }
+    ],
+    "name": "assignTask",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      }
+    ],
+    "name": "challengeTranslation",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_challengeMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "name": "changeChallengeMultiplier",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_governor",
+        "type": "address"
+      }
+    ],
+    "name": "changeGovernor",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_loserStakeMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "name": "changeLoserStakeMultiplier",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_reviewTimeout",
+        "type": "uint256"
+      }
+    ],
+    "name": "changeReviewTimeout",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_sharedStakeMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "name": "changeSharedStakeMultiplier",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_translationMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "name": "changeTranslationMultiplier",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_winnerStakeMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "name": "changeWinnerStakeMultiplier",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_submissionTimeout",
+        "type": "uint256"
+      },
+      {
+        "name": "_minPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "_metaEvidence",
+        "type": "string"
+      }
+    ],
+    "name": "createTask",
+    "outputs": [
+      {
+        "name": "taskID",
+        "type": "uint256"
+      }
+    ],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_side",
+        "type": "uint8"
+      }
+    ],
+    "name": "fundAppeal",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      }
+    ],
+    "name": "reimburseRequester",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_disputeID",
+        "type": "uint256"
+      },
+      {
+        "name": "_ruling",
+        "type": "uint256"
+      }
+    ],
+    "name": "rule",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_evidence",
+        "type": "string"
+      }
+    ],
+    "name": "submitEvidence",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_translation",
+        "type": "string"
+      }
+    ],
+    "name": "submitTranslation",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "_translator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_translatedText",
+        "type": "string"
+      }
+    ],
+    "name": "TranslationSubmitted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "_party",
+        "type": "uint8"
+      }
+    ],
+    "name": "HasPaidAppealFee",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_metaEvidenceID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "_evidence",
+        "type": "string"
+      }
+    ],
+    "name": "MetaEvidence",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_arbitrator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "_disputeID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "_metaEvidenceID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "_evidenceGroupID",
+        "type": "uint256"
+      }
+    ],
+    "name": "Dispute",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_arbitrator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "_evidenceGroupID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "_party",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_evidence",
+        "type": "string"
+      }
+    ],
+    "name": "Evidence",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_arbitrator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "_disputeID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "_ruling",
+        "type": "uint256"
+      }
+    ],
+    "name": "Ruling",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_arbitrator",
+        "type": "address"
+      },
+      {
+        "name": "_arbitratorExtraData",
+        "type": "bytes"
+      },
+      {
+        "name": "_reviewTimeout",
+        "type": "uint256"
+      },
+      {
+        "name": "_translationMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_challengeMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_sharedStakeMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_winnerStakeMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_loserStakeMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_beneficiary",
+        "type": "address"
+      },
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_round",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawFeesAndRewards",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "arbitrator",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "arbitratorExtraData",
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "challengeMultiplier",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "disputeIDtoTaskID",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_round",
+        "type": "uint256"
+      },
+      {
+        "name": "_contributor",
+        "type": "address"
+      }
+    ],
+    "name": "getContributions",
+    "outputs": [
+      {
+        "name": "contributions",
+        "type": "uint256[3]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getDepositValue",
+    "outputs": [
+      {
+        "name": "deposit",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_round",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRoundInfo",
+    "outputs": [
+      {
+        "name": "paidFees",
+        "type": "uint256[3]"
+      },
+      {
+        "name": "hasPaid",
+        "type": "bool[3]"
+      },
+      {
+        "name": "feeRewards",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getTaskParties",
+    "outputs": [
+      {
+        "name": "parties",
+        "type": "address[3]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getTaskPrice",
+    "outputs": [
+      {
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "governor",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "loserStakeMultiplier",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "MULTIPLIER_DIVISOR",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "reviewTimeout",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "sharedStakeMultiplier",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "tasks",
+    "outputs": [
+      {
+        "name": "submissionTimeout",
+        "type": "uint256"
+      },
+      {
+        "name": "minPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "maxPrice",
+        "type": "uint256"
+      },
+      {
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "name": "lastInteraction",
+        "type": "uint256"
+      },
+      {
+        "name": "requester",
+        "type": "address"
+      },
+      {
+        "name": "requesterDeposit",
+        "type": "uint256"
+      },
+      {
+        "name": "sumDeposit",
+        "type": "uint256"
+      },
+      {
+        "name": "disputeID",
+        "type": "uint256"
+      },
+      {
+        "name": "ruling",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "translationMultiplier",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "winnerStakeMultiplier",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
