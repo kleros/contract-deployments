@@ -32,10 +32,13 @@ const Linguo = deployments.linguo.Linguo;
 
 console.log(Linguo);
 // {
-//    <network-id>: {
-//      abi: [...],
-//      address: '0x9999999999999999999999999999999999999999',
-//    }
+//   contractName: "Linguo",
+//   abi: [...],
+//   networks: {
+//     '<network-id>': {
+//       address: '0x9999999999999999999999999999999999999999',
+//     }
+//   }
 // }
 ```
 
@@ -50,10 +53,13 @@ import Linguo from '@kleros/contract-deployments/interactions/linguo';
 
 console.log(Linguo);
 // {
-//    <network-id>: {
-//      abi: [...],
-//      address: '0x9999999999999999999999999999999999999999',
-//    }
+//   contractName: "Linguo",
+//   abi: [...],
+//   networks: {
+//     '<network-id>': {
+//       address: '0x9999999999999999999999999999999999999999',
+//     }
+//   }
 // }
 ```
 
