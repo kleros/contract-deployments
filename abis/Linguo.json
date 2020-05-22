@@ -31,8 +31,38 @@
     "constant": false,
     "inputs": [
       {
+        "name": "_beneficiary",
+        "type": "address"
+      },
+      {
         "name": "_taskID",
         "type": "uint256"
+      },
+      {
+        "name": "_cursor",
+        "type": "uint256"
+      },
+      {
+        "name": "_count",
+        "type": "uint256"
+      }
+    ],
+    "name": "batchRoundWithdraw",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_evidence",
+        "type": "string"
       }
     ],
     "name": "challengeTranslation",
@@ -143,7 +173,7 @@
     "constant": false,
     "inputs": [
       {
-        "name": "_submissionTimeout",
+        "name": "_deadline",
         "type": "uint256"
       },
       {
@@ -253,6 +283,116 @@
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "_beneficiary",
+        "type": "address"
+      },
+      {
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "name": "_round",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawFeesAndRewards",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_arbitrator",
+        "type": "address"
+      },
+      {
+        "name": "_arbitratorExtraData",
+        "type": "bytes"
+      },
+      {
+        "name": "_reviewTimeout",
+        "type": "uint256"
+      },
+      {
+        "name": "_translationMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_challengeMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_sharedStakeMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_winnerStakeMultiplier",
+        "type": "uint256"
+      },
+      {
+        "name": "_loserStakeMultiplier",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "_requester",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "TaskCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "_translator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_price",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "_timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "TaskAssigned",
+    "type": "event"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -269,9 +409,58 @@
         "indexed": false,
         "name": "_translatedText",
         "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "_timestamp",
+        "type": "uint256"
       }
     ],
     "name": "TranslationSubmitted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "_challenger",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "_timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "TranslationChallenged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "_taskID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "_reason",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "name": "_timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "TaskResolved",
     "type": "event"
   },
   {
@@ -385,64 +574,26 @@
     "type": "event"
   },
   {
+    "constant": true,
     "inputs": [
-      {
-        "name": "_arbitrator",
-        "type": "address"
-      },
-      {
-        "name": "_arbitratorExtraData",
-        "type": "bytes"
-      },
-      {
-        "name": "_reviewTimeout",
-        "type": "uint256"
-      },
-      {
-        "name": "_translationMultiplier",
-        "type": "uint256"
-      },
-      {
-        "name": "_challengeMultiplier",
-        "type": "uint256"
-      },
-      {
-        "name": "_sharedStakeMultiplier",
-        "type": "uint256"
-      },
-      {
-        "name": "_winnerStakeMultiplier",
-        "type": "uint256"
-      },
-      {
-        "name": "_loserStakeMultiplier",
-        "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "_beneficiary",
-        "type": "address"
-      },
       {
         "name": "_taskID",
         "type": "uint256"
       },
       {
-        "name": "_round",
+        "name": "_beneficiary",
+        "type": "address"
+      }
+    ],
+    "name": "amountWithdrawable",
+    "outputs": [
+      {
+        "name": "total",
         "type": "uint256"
       }
     ],
-    "name": "withdrawFeesAndRewards",
-    "outputs": [],
     "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -512,6 +663,25 @@
       {
         "name": "_taskID",
         "type": "uint256"
+      }
+    ],
+    "name": "getChallengeValue",
+    "outputs": [
+      {
+        "name": "deposit",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
       },
       {
         "name": "_round",
@@ -558,6 +728,25 @@
       {
         "name": "_taskID",
         "type": "uint256"
+      }
+    ],
+    "name": "getNumberOfRounds",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_taskID",
+        "type": "uint256"
       },
       {
         "name": "_round",
@@ -576,6 +765,20 @@
       },
       {
         "name": "feeRewards",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getTaskCount",
+    "outputs": [
+      {
+        "name": "",
         "type": "uint256"
       }
     ],

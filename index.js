@@ -1,5 +1,5 @@
-const linguo = require('./interactions/linguo');
+const linguo = require('./linguo');
 
 module.exports = {
-  ...linguo,
+  linguo,
 };

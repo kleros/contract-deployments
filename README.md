@@ -49,7 +49,7 @@ The reason they are organized this way is because most applications will have mo
 Contracts are split by application:
 
 ```
-import Linguo from '@kleros/contract-deployments/interactions/linguo';
+import Linguo from '@kleros/contract-deployments/linguo';
 
 console.log(Linguo);
 // {
@@ -62,5 +62,3 @@ console.log(Linguo);
 //   }
 // }
 ```
-
-**Important**: Please notice the `/interactions/` subpath in the import above.
