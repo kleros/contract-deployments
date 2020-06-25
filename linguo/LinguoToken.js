@@ -6,7 +6,7 @@ module.exports = {
   abi,
   networks: {
     [NetworkIds.KOVAN]: {
-      address: '0x74a45009e6E9A42705b477786F7Dc5405601077d',
+      address: '0x85f04B5251369606192F1ebC7072161F66E1Fe49',
     },
   },
 };
