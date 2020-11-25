@@ -1,4 +1,0 @@
-{
-  "*.{json,md,html,svg}": "prettier --write",
-  "*.{js}": "yarn run lint:js --fix"
-}
